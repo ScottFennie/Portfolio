@@ -8229,6 +8229,10 @@ body.template-color-1 {
 .header--sticky.sticky .mainmenu-nav .primary-menu li a {
   opacity: 0.5; }
 
+.school-logo{
+  max-height: 3vh;
+}
+
 /*----------------------------
     Mobile Menu Styles  
 ------------------------------*/
@@ -10803,7 +10807,8 @@ div#featured-project-carousel {
     border-radius: 10px;
     padding: 3px;
     background: #212428;
-    box-shadow: inset 8px 8px 16px #00000075,  inset -8px -8px 16px #383e4575; }
+    box-shadow: inset 8px 8px 16px #00000075, 
+ inset -8px -8px 16px #383e4575; }
     .progress-charts .progress .progress-bar {
       overflow: visible;
       position: relative;

@@ -19,13 +19,6 @@
     <link rel="stylesheet" href="assets/css/plugins/feature.css">
     <!-- Style css -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            // https://dashboard.emailjs.com/admin/integration
-            emailjs.init('user_sSb1lEGplS9nxjyPTwQX3');
-        })();
-    </script>
 </head>
 
 <body class="template-color-1 spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
@@ -1620,8 +1613,8 @@
                         <div class="contact-form-wrapper">
                             <div class="introduce">
 
-                                <form class="rnt-contact-form rwt-dynamic-form row" id="contact-form" method="POST"
-                                    action="mail.php">
+                                <form class="rnt-contact-form rwt-dynamic-form row" action="mailto:s.fennie4@gmail.com"
+                                    method="POST" enctype="multipart/form-data" name="EmailForm">
 
                                     <div class="col-lg-6">
                                         <div class="form-group">
@@ -1634,7 +1627,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="contact-phone">Phone Number</label>
-                                            <input class="form-control" name="contact-phone" id="contact-phone"
+                                            <input class="form-control" name="ContactPhone" id="contact-phone"
                                                 type="text">
                                         </div>
                                     </div>
@@ -1643,22 +1636,22 @@
                                         <div class="form-group">
                                             <label for="contact-email">Email</label>
                                             <input class="form-control form-control-sm" id="contact-email"
-                                                name="contact-email" type="email">
+                                                name="ContactEmail" type="email">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="subject">subject</label>
-                                            <input class="form-control form-control-sm" id="subject" name="subject"
-                                                type="text">
+                                            <input class="form-control form-control-sm" id="subject"
+                                                name="ContactSubject" type="text">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="contact-message">Your Message</label>
-                                            <textarea name="contact-message" id="contact-message" cols="30"
+                                            <textarea name="ContactComment" id="contact-message" cols="30"
                                                 rows="10"></textarea>
                                         </div>
                                     </div>
@@ -1985,22 +1978,6 @@
     <!-- End Footer Area -->
 
     <!-- JS ============================================ -->
-    <script type="text/javascript">
-        window.onload = function () {
-            document.getElementById('contact-form').addEventListener('submit', function (event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'contact_form', this)
-                    .then(function () {
-                        console.log('SUCCESS!');
-                    }, function (error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
     <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/modernizer.min.js"></script>
     <script src="assets/js/vendor/feather.min.js"></script>

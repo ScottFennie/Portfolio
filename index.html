@@ -26,6 +26,22 @@
             emailjs.init('user_sSb1lEGplS9nxjyPTwQX3');
         })();
     </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function () {
+                        console.log('SUCCESS!');
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </head>
 
 <body class="template-color-1 spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
@@ -1919,23 +1935,27 @@
                         <!-- Comment Section Area Start -->
                         <div class="comment-inner">
                             <h3 class="title mb--40 mt--50">Leave a Reply</h3>
-                            <form action="#">
+                            <form action="#" id="contact-form">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-12 col-12">
-                                        <div class="rnform-group"><input type="text" placeholder="Name">
+                                        <input type="hidden" name="contact_number">
+                                        <div class="rnform-group"><input type="text" placeholder="Name"
+                                                name="user_name">
                                         </div>
-                                        <div class="rnform-group"><input type="email" placeholder="Email">
+                                        <div class="rnform-group"><input type="email" placeholder="Email"
+                                                name="user_email">
                                         </div>
                                         <div class="rnform-group"><input type="text" placeholder="Website">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-12 col-12">
                                         <div class="rnform-group">
-                                            <textarea placeholder="Comment"></textarea>
+                                            <textarea placeholder="Comment" name="message"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
-                                        <a class="rn-btn" href="#"><span>SUBMIT NOW</span></a>
+                                        <a class="rn-btn" href="#" type="submit" value="Send"><span>SUBMIT
+                                                NOW</span></a>
                                     </div>
                                 </div>
                             </form>
